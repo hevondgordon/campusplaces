@@ -1,0 +1,236 @@
+body{
+    height: 100%;
+    background-color: #F0F0F0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#map{
+    height:400px;
+}
+header{
+    background-color: white;
+}
+
+.header-container{
+    padding-top:10px;
+    color:black;
+    height: 70px;
+    line-height: 35px;
+    background-color: white;
+}
+.label-parent{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.properties-label{
+    @extend .label-parent;
+}
+a.authorization-label{
+    @extend .label-parent;
+    float:right;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:black;
+    text-decoration: none;
+}
+a.authorization-label:hover{
+    color:blue;
+}
+.label-container{
+    display: flex;
+}
+.properties-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+.center-container{
+  display: flex;
+}
+.center-content{
+  margin: auto;
+}
+
+.properties-input-parent{
+    padding-left: 6px;
+    display: inline-block;
+}
+.properties-input{
+    background-image: url('../images/magnifying-glass.png');
+    background-repeat:no-repeat;
+    background-position:6px;
+    padding-left:35px;
+    border:none;
+    width: 100%;
+
+}
+input[type="text"]{
+    outline: none;
+}
+
+.utilities{
+    height: 75px;
+    background-color:white;
+    width: 100%;
+}
+.utilities-container{
+  height:100%;
+}
+.rangeslider-container{
+  padding-top: 6px;
+}
+.mobile-nav-container{
+    overflow: hidden;
+    position: relative;
+
+}
+.mobile-nav-container a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.search-button{
+  color: white;
+  background-color: #ed5565;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.mini-card{
+  height:90px;
+  width:100%;
+  background-color: #D3D3D3;
+  border-radius:4px;
+  margin:10px;
+  cursor: pointer;
+}
+.mini-card-top{
+  height:30%;
+}
+.mini-card-body{
+  height: 70%;
+}
+.mini-card img{
+  margin: auto;
+}
+.tick{
+  float:right;
+  padding-right: 6px;
+  color:darkgray;
+}
+.property-sections{
+  height:100%;
+}
+.property-container{
+  height:190px;
+  background-color: white;
+  margin-top: 10px;
+}
+.property-image-container{
+  height:100%;
+}
+.property-information-container{
+  height:100%;
+  background-color: #fff;
+  padding: 10px;
+}
+.property-amenities-container{
+  height:100%;
+  background-color: #fff;
+  border-left:1px solid #D3D3D3;
+
+}
+.large-font{
+  display: inline-block;
+}
+.price{
+  float: right;
+}
+.ammenities{
+  height:33.333333%;
+}
+.property-image-container{
+  padding-right:0px;
+  padding-left:0px;
+}
+.property-image-container img{
+  width:100%;
+  height:100%;
+
+}
+.active-mini-card{
+  background-color: white;
+}
+.active-tick{
+  color:blue;
+}
+
+
+
+// MEDIA QUERIES
+@media screen and (max-width:768px) {
+  .regular-header {
+    display: none;
+  }
+  .mobile-nav-container a:not(:first-child) {
+    display: none;
+  }
+  .mobile-nav-container a.icon {
+    float: right;
+    display: block;
+    font-size: 25px;
+  }
+  .mobile-nav-container{
+    width:100%;
+  }
+  .mobile-nav-container.responsive {
+    position: relative;
+    width:100%;
+
+  }
+  .mobile-nav-container.responsive a.icon {
+    position: absolute;
+    right: 15px;
+    font-size: 25px;
+    top: 0;
+  }
+  .mobile-nav-container.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .label-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .utilities{
+    height: 265px;
+    background-color:white;
+    padding:5px;
+  }
+
+  .entity-label{
+    margin-left: 10px;
+  }
+  .label-container{
+    padding-bottom:15px;
+    padding-top:15px;
+  }
+  .properties-input{
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width:769px) {
+    .mobile-nav-container {
+        display: none;
+    }
+}

@@ -43,16 +43,11 @@ class Room(TimeStampedModel):
         return "Room Number {}".format(self.pk)
 
 
-class Property(TimeStampedModel):
-    landlord = models.ForeignKey(User, related_name="property")
-    rooms = models.ManyToManyField(Room, related_name="property", blank=True)
-    images = models.ManyToManyField(Picture, blank=True)
-    lat = models.PositiveIntegerField(null=True, blank=True)
-    lng = models.PositiveIntegerField(null=True, blank=True)
-    telephone_number = models.CharField(
-        max_length=255,
-        default='',
-        blank=True
+class Address(TimeStampedModel):
+    parish = models.CharField(
+        max_length=50,
+        choices=constants.PARISHES,
+        default=constants.DEFAULT_PARISH,
     )
     address_line_1 = models.CharField(
         max_length=255,
@@ -63,6 +58,56 @@ class Property(TimeStampedModel):
         max_length=255,
         default='',
         blank=True
+    )
+
+    class Meta:
+        verbose_name = "Address"
+
+    def __str__(self):
+        return "Address Number {}".format(self.pk)
+
+
+class Telephone(TimeStampedModel):
+    cell_phone = models.CharField(
+        max_length=255,
+        default='',
+        blank=True
+    )
+    home_phone = models.CharField(
+        max_length=255,
+        default='',
+        blank=True
+    )
+    work_phone = models.CharField(
+        max_length=255,
+        default='',
+        blank=True
+    )
+    ext = models.CharField(
+        max_length=255,
+        default='',
+        blank=True
+    )
+
+    class Meta:
+        verbose_name = "Telephone"
+
+    def __str__(self):
+        return "Telephone Number {}".format(self.pk)
+
+
+class Property(TimeStampedModel):
+    landlord = models.ForeignKey(User, related_name="property")
+    rooms = models.ManyToManyField(Room, related_name="property", blank=True)
+    images = models.ManyToManyField(Picture, blank=True)
+    lat = models.PositiveIntegerField(null=True, blank=True)
+    lng = models.PositiveIntegerField(null=True, blank=True)
+    telephone_number = models.ForeignKey(
+        Telephone, verbose_name="Telephone", related_name="telephone",
+        null=True, blank=True
+    )
+    address = models.ForeignKey(
+        Address, verbose_name="Address", related_name="address", null=True, blank=True
     )
 
     class Meta:

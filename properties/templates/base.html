@@ -3,21 +3,64 @@
 <html>
 <head>
     <title>Campus Places</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet"  href="{% static 'css/main.css' %}">
+    <link rel="stylesheet"  href="{% static 'rangeslider/css/ion.rangeSlider.css' %}">
+    <link rel="stylesheet"  href="{% static 'rangeslider/css/ion.rangeSlider.skinFlat.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
 </head>
 <body>
 
-<header id="header" class="">
-  <nav>
-      <a href="" title="">one</a>
-      <a href="" title="">two</a>
-      <a href="" title="">three</a>
-      <a href="" title="">four</a>
-      <a href="" title="">five</a>
-      <a href="" title="">six</a>
-  </nav>
+<header>
+  <div class="container-fluid regular-header">
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-xs-12 offset-md-1 header-container">
+        <a href="" title="">
+          <img src="{% static 'images/logo-48.png' %}" alt="">
+          <span class="properties-label">Regular</span>
+        </a>
+        <a href="#" title="" class="authorization-label">login</a>
+        <a href="#" title="" class="authorization-label">register</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid mobile-header">
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-xs-12 offset-md-1 mobile-nav-container" id="mobile-nav">
+        <a href="" title="">
+          <img src="{% static 'images/logo-48.png' %}" alt="">
+          <span class="properties-label">Mobile</span>
+        </a>
+        <a href="#" title="" class="authorization-label">login</a>
+        <a href="#" title="" class="authorization-label">register</a>
+        <a href="#" class="icon">&#9776;</a>
+      </div>
+
+    </div>
+  </div>
 </header>
+
+{% block map %}
+{% endblock %}
+
+{% block utilities %}
+{% endblock %}
+
+
 {% block content %}
 {% endblock %}
 
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'rangeslider/js/ion-rangeSlider/ion.rangeSlider.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSswF3cPIVBFKF9v0-MEZaKA46Cs_HT3c&callback=initMap">
+</script>
 </body>
 </html>

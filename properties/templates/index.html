@@ -1,8 +1,108 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block map %}
+    <div id="map"></div>
+{% endblock %}
+
+{% block utilities %}
+<form action="{% url 'home'%}" method="get" accept-charset="utf-8" class="form-inline">
+    <div class="utilities container-fluid">
+      <div class="row utilities-container">
+        <div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 label-container">
+          <label>Price</label>
+        </div>
+        <div class="col-sm-11 col-md-11 col-lg-5 col-xs-11">
+          <div class="container-fluid rangeslider-container">
+            <input type="text" name="range" class="rangeslider" id="rangeslider"/>
+          </div>
+        </div>
+
+        <div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 label-container">
+          <label>Location</label>
+        </div>
+        <div class="col-sm-11 col-md-11 col-lg-4 col-xs-11 properties-input-container">
+          <div class=" properties-input-parent">
+            <input type="text" name="location" class="properties-input" placeholder="search locations here" />
+
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-1 col-xs-12 center-container">
+        <input type="submit" value="Search" class="center-content btn search-button">
+        <input type="hidden" name="accomodations" id="accomodation"/>
+        </div>
+
+      </div>
+    </div>
+</form>
+
+
+{% endblock %}
+
 {% block content %}
-  {% for room in rooms%}
-      <li>{{room.price}}</li>
-  {% endfor %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+
+        <div class="mini-card {% if accomodation == 'single' %}active-mini-card{% endif %}" id="single">
+          <div class="mini-card-top center-container">
+            <label class="center-content">Single</label>
+            <label class="tick {% if accomodation == 'single' %}active-tick{% endif %}">&#10003;</label>
+          </div>
+          <div class="center-container mini-card-body">
+            <div class="center-content">
+                <img src="{% static 'images/user.png' %}" alt="Single" class="">
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-card {% if accomodation == 'shared' %}active-mini-card{% endif %}" id="shared">
+          <div class="mini-card-top center-container">
+            <label class="center-content">Shared</label>
+            <label class="tick {% if accomodation == 'shared' %}active-tick{% endif %}">&#10003;</label>
+          </div>
+          <div class="center-container mini-card-body">
+            <div class="center-content">
+                <img src="{% static 'images/users.png' %}" alt="Shared" class="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-10 property-container">
+        <div class="row property-sections">
+          <div class="property-image-container col-lg-3">
+            <img src="{% static 'images/placeholder1.jpg' %}" alt="">
+          </div>
+          <div class="property-information-container col-lg-7">
+              <h4 class="large-font">St. Andrew</h4>
+              <h4 class="large-font price">$20,000</h4>
+              <p>37 Garden Boulevard,<br>Mona</p>
+              <p>Utilities Included</p>
+              <p>(876) 4790489</p>
+          </div>
+          <div class="property-amenities-container col-lg-2">
+            <div class="ammenities center-container">
+              <img src="{% static 'images/toilet.png' %}" alt="" class="center-content">
+              <p class="center-content">Single</p>
+            </div>
+
+            <div class="ammenities center-container">
+              <img src="{% static 'images/teapot.png' %}" alt="" class="center-content">
+              <p class="center-content">Shared</p>
+            </div>
+
+            <div class="ammenities center-container">
+              <img src="{% static 'images/bed.png' %}" alt="" class="center-content">
+              <p class="center-content">Shared</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 {% endblock %}
