@@ -22,14 +22,20 @@ class HomePageView(ListView):
     def get(self, request, *args, **kwargs):
         self.object_list = self.get_queryset()
         context = self.get_context_data()
-        if request.GET.get('accomodations') is None:
-            print("BAaBAa BLACKSHEEP")
-            accomodation = {
-                "accomodation": "single"
-            }
+        accomodations = request.GET.get('accomodations')
+        range_from = 0
+        range_to = 100000
+        range = request.GET.get('range')
+        if range:
+            ranges = range.split(';')
+            range_from = ranges[0]
+            range_to = ranges[1]
+
+        context.update({"from": range_from, "to": range_to})
+        if accomodations is None or accomodations == "":
+            accomodation = {"accomodation": "single"}
         else:
-            accomodation = {
-                "accomodation": request.GET.get('accomodations')
-            }
+            accomodation = {"accomodation": accomodations}
+
         context.update(accomodation)
         return self.render_to_response(context)

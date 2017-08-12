@@ -105,4 +105,18 @@
     </div>
 
   </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript">
+    $("#rangeslider").ionRangeSlider({
+      type: "double",
+      min: 0,
+      max: 100000,
+      from: {{ from }},
+      to: {{ to }},
+      grid: true
+});
+  </script>
 {% endblock %}

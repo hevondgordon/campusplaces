@@ -11,12 +11,14 @@ function initMap() {
   });
 }
 
-$("#rangeslider").ionRangeSlider({
-    type: "double",
-    min: 0,
-    max: 100000,
-    grid: true
-});
+// $("#rangeslider").ionRangeSlider({
+//     type: "double",
+//     min: 0,
+//     max: 100000,
+//     from: 30,
+//     to: 7000,
+//     grid: true
+// });
 
 $('.icon').click(function(){
   var mobile_nav =$('#mobile-nav')
@@ -38,3 +40,5 @@ $('.mini-card').click(function(){
   $(this).find('label.tick').addClass('active-tick');
 
 });
+
+// console.info('{{ to }}')
