@@ -39,3 +39,7 @@ class HomePageView(ListView):
 
         context.update(accomodation)
         return self.render_to_response(context)
+
+
+class ProfileView():
+    pass

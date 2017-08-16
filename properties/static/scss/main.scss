@@ -1,6 +1,10 @@
+$body-color:#F0F0F0;
+$mini-card-background-color:#D3D3D3;
+$accent:#ed5565;
+
 body{
     height: 100%;
-    background-color: #F0F0F0;
+    background-color: $body-color;
     font-family: 'Source Sans Pro', sans-serif;
 }
 #map{
@@ -9,7 +13,18 @@ body{
 header{
     background-color: white;
 }
-
+.sidebar{
+  background-color: white;
+  height:100vh;
+}
+.content{
+  padding: 20px;
+  background-color: $body-color;
+}
+.large-content-card{
+  height: 100%;
+  background-color:white;
+}
 .header-container{
     padding-top:10px;
     color:black;
@@ -97,7 +112,7 @@ input[type="text"]{
 }
 .search-button{
   color: white;
-  background-color: #ed5565;
+  background-color: $accent;
   width: 95%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -106,7 +121,7 @@ input[type="text"]{
 .mini-card{
   height:90px;
   width:100%;
-  background-color: #D3D3D3;
+  background-color: $mini-card-background-color;
   border-radius:4px;
   margin:10px;
   cursor: pointer;
@@ -138,13 +153,13 @@ input[type="text"]{
 }
 .property-information-container{
   height:100%;
-  background-color: #fff;
+  background-color: white;
   padding: 10px;
 }
 .property-amenities-container{
   height:100%;
-  background-color: #fff;
-  border-left:1px solid #D3D3D3;
+  background-color: white;
+  border-left:1px solid $mini-card-background-color;
 
 }
 .large-font{
@@ -169,7 +184,7 @@ input[type="text"]{
   background-color: white;
 }
 .active-tick{
-  color:blue;
+  color:$accent;
 }
 
 

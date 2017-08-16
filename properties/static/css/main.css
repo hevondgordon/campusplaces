@@ -9,6 +9,18 @@ body {
 header {
   background-color: white; }
 
+.sidebar {
+  background-color: white;
+  height: 100vh; }
+
+.content {
+  padding: 20px;
+  background-color: #F0F0F0; }
+
+.large-content-card {
+  height: 100%;
+  background-color: white; }
+
 .header-container {
   padding-top: 10px;
   color: black;
@@ -129,12 +141,12 @@ input[type="text"] {
 
 .property-information-container {
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   padding: 10px; }
 
 .property-amenities-container {
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   border-left: 1px solid #D3D3D3; }
 
 .large-font {
@@ -158,7 +170,7 @@ input[type="text"] {
   background-color: white; }
 
 .active-tick {
-  color: blue; }
+  color: #ed5565; }
 
 @media screen and (max-width: 768px) {
   .regular-header {
